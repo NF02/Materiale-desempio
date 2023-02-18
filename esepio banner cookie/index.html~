@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      button.info{font-size: 12px; width: 55px; background-color:#292827; color:#a8ff30; border-color: #292827;}
+    </style>  
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+<!-- Button trigger modal -->
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cookiePopup">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="cookiePopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cookie e privacy</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body align-items-center align-self-center text-center"> <!-- compo in cui sono presenti le info -->
+	<img src="img/logo.png" width="70"  style="border-radius: 10px">
+        <p>Questo sito utilizza cookies per personalizzare i contenuti, in caso di declino, non saranno disponibili alcune funzionalità.</p> 
+      </div>
+      <div class="modal-footer">
+        <a class=" align-items-center" href="teminiecondizioni.html">Scopri di più<i class="fa fa-angle-right ml-2"></i></a>
+        <button type="button" id="accetta" class="btn btn-dark button.info" style="color:#a8ff30" data-bs-dismiss="modal"  onclick="document.cookie='accettato=visto'">Accetta</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+	  if(document.cookie.indexOf('accettato') >=0){ // caso in cui l'utente ha accettato i cookie.
+	  } else {
+	      $('#cookiePopup').modal('show');
+	  }
+      });
+    </script>
+  </body>
+</html>
